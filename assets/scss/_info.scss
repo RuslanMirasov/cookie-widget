@@ -1,0 +1,233 @@
+.cookie-widget-settings.cookie-widget-settings--info {
+  flex-wrap: wrap;
+}
+
+.cookie-witget-filters {
+  display: flex;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  padding: 10px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.cookie-witget-go-back {
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 600;
+  cursor: pointer;
+  svg {
+    position: relative;
+    top: 1px;
+    height: 11px;
+    width: auto;
+  }
+}
+
+.cookie-widget-search {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  flex: 1;
+  max-width: 420px;
+  margin: 0px 20px;
+  height: 40px;
+  svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    right: 12px;
+    z-index: 2;
+  }
+  input {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    z-index: 1;
+    outline: none;
+    user-select: none;
+    padding: 0px 45px 0px 16px;
+    &:focus {
+      border: 1px solid var(--cookie-widget-primary-color);
+    }
+  }
+}
+
+.cookie-widget-filter {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  svg {
+    cursor: pointer;
+    pointer-events: none;
+  }
+  &.active {
+    .cookie-widget-filter-form-wrapper {
+      display: block;
+      cursor: auto;
+      label {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.cookie-widget-filter-form-wrapper {
+  display: none;
+  position: absolute;
+  right: -8px;
+  top: 0px;
+  width: 320px;
+  height: auto;
+  padding-top: 60px;
+  pointer-events: none;
+  z-index: 1;
+
+  form {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    pointer-events: all;
+    z-index: 1;
+    label {
+      position: relative;
+      font-size: 14px;
+      line-height: 1.2;
+      padding-left: 26px;
+      input {
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 1px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: rgb(255, 255, 255);
+      position: absolute;
+      transform: rotate(45deg) translate(-4px, 20px);
+      right: 0px;
+      bottom: 100%;
+    }
+    .cookie-widget-filter-clear {
+      display: flex;
+      margin-left: auto;
+      text-align: right;
+      font-size: 12px;
+      border: none;
+      background: none;
+      color: var(--cookie-widget-link);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.cookie-widget-accordeons {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cookie-widget-accordeons__item {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.accordion-header {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(230, 230, 230);
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  span {
+    color: var(--cookie-widget-primary-color);
+    font-family: var(--cookie-widget-ff);
+    font-size: 18px;
+    font-weight: 600 !important;
+    line-height: 1.1;
+  }
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.cookie-widget-accordeons__content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  display: none;
+  @media (max-width: 767px) {
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+.cookie-info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 5px;
+  background: rgb(245, 245, 245);
+  padding: 16px 20px;
+  border-radius: 8px;
+  @media (max-width: 767px) {
+    gap: 4px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  p {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    strong {
+      min-width: 64px;
+    }
+    @media (max-width: 767px) {
+      font-size: 10px;
+      strong {
+        min-width: 52px;
+      }
+    }
+  }
+}
