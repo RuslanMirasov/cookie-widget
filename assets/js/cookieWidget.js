@@ -54,12 +54,19 @@ const CookieWidget = {
     const closeButtons = document.querySelectorAll('[data-cookie-widget-close]');
     const backdrop = document.querySelector('.cookie-widget-popup-backdrop');
     const fixPanel = document.querySelector('.cookie-widget-fix-block');
+    const confirmButton = document.querySelector('[data-cookie-widget-btn="confirm"]');
     const acceptButtons = document.querySelectorAll('[data-cookie-widget-btn="accept"]');
     const tabButtons = document.querySelectorAll('[data-cookie-widget-nav]');
     const pageButtons = document.querySelectorAll('[data-cookie-widget-page-nav]');
     const denyButtons = document.querySelectorAll('[data-cookie-widget-btn="deny"]');
     const checkboxes = document.querySelectorAll('[data-cookie-widget-checkbox]');
     const filterButton = document.querySelector('[data-cookie-widget-filter]');
+
+    if (confirmButton) {
+      confirmButton.addEventListener('click', () => {
+        this.saveConsentState();
+      });
+    }
 
     if (filterButton) {
       filterButton.addEventListener('click', e => {
@@ -154,7 +161,6 @@ const CookieWidget = {
 
     this.consentState[slug] = isChecked;
     this.updateAcceptAllButtonVisibility();
-    this.saveConsentState();
   },
 
   // УБИРАЕМ КНОПКУ "ОДОБРИТЬ ВСЁ" ЕСЛИ ПОЛЬЗОВАТЕЛЬ ВЫБРАЛ КУКИ САМОСТОЯТЕЛЬНО
