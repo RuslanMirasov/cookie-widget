@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/default.min.css" />
-    <!-- <link rel="stylesheet" href="./assets/css/cookieWidget.min.css" /> -->
-    <link rel="stylesheet" href="./assets/css/styles.min.css" />
+    <link rel="stylesheet" href="./assets/css/cookieWidget.min.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/styles.min.css" /> -->
 
     <title>Cookie widget</title>
   </head>
@@ -22,81 +22,201 @@
     </section>
     <section>
       <h1>Cookie widget</h1>
-      <hr />
     </section>
     <section>
-      <h2>Установка</h2>
+      <h2>Шаг 1: Скачай файлы</h2>
+      <hr />
+      <p class="full">Файлы доступны как в минифицированной версии, так и в базовой. На выбор:<br /></p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, ipsa sapiente. Pariatur obcaecati veritatis error optio accusamus provident
-        expedita corporis labore quidem mollitia, sint aut eum omnis. Debitis, consequatur incidunt. Iusto, odio rerum. Iusto beatae vero, quas
-        delectus quia inventore dolorem. At consequuntur molestiae quod nemo mollitia delectus ratione? Porro optio nam rem eveniet veniam explicabo,
-        quis ipsum eos nemo. Sunt autem accusamus libero dolorem sint cum unde eius dolores fugit minus distinctio ipsum facere alias error in,
-        aperiam consectetur eum aliquam hic earum? Beatae molestiae id vero earum sint? Debitis quos voluptatem odit amet, doloremque nemo architecto
-        ab recusandae tenetur? Cumque pariatur ea quas nihil quia dolores sequi quae earum vitae? Minus iusto quasi reprehenderit sequi vel autem
-        facilis! Hic voluptas possimus dignissimos totam nam perspiciatis ab assumenda rerum exercitationem cupiditate ea laboriosam officia dicta
-        quisquam perferendis labore dolorem soluta, mollitia, blanditiis, voluptates accusantium. Provident illum praesentium eius labore!
+        Стили: <br />
+        <a href="./assets/css/cookieWidget.css" download>cookieWidget.css</a> <br />
+        <a href="./assets/css/cookieWidget.min.css" download>cookieWidget.min.css</a> <br />
+      </p>
+      <p>
+        Виджет: <br />
+        <a href="./assets/js/cookieWidget.js">cookieWidget.js</a> <br />
+        <a href="./assets/css/cookieWidget.min.css" download>cookieWidget.min.js</a> <br />
+      </p>
+      <p>
+        Данные coockie (Milka): <br />
+        <a href="./assets/js/cookieData.js" download>cookieData.js</a> <br />
+      </p>
+      <p class="full"></p>
+      <br />
+      <h2>Шаг 2: Подключи файлы на сайт</h2>
+      <hr />
+      <p>Стили подключаем в <b>&lt;head&gt;</b> :</p>
+
+      <pre>
+         <code>
+&lt;head&gt;
+  ...
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/cookieWidget.min.css&quot;&gt;
+&lt;/head&gt;</code>
+      </pre>
+      <p>
+        Скрипты подключаем перед закрывающим тегом <b>&lt;/body&gt;</b> и инициализируем виджет:<br />
+        <b>Важно!</b> Сначала подключи cookieData.js, потом cookieWidget.js, чтобы скрипт видел данные.
       </p>
       <pre>
          <code>
-         &lt;!DOCTYPE html&gt;
-         &lt;html lang=&quot;en&quot;&gt;
-            &lt;head&gt;
-            &lt;meta charset=&quot;UTF-8&quot;&gt;
-            &lt;title&gt;Мой сайт&lt;/title&gt;
-            &lt;script src=&quot;https://example.com/widget.js&quot;&gt;&lt;/script&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-            &lt;h1&gt;Добро пожаловать!&lt;/h1&gt;
-
-            <span>&lt;!-- Или сюда --&gt;</span>
-            &lt;div id=&quot;cookie-widget&quot;&gt;&lt;/div&gt;
-
-            &lt;script&gt;
-               <span>// Например, код инициализации виджета</span>
-               initCookieWidget({
-                  color: &quot;blue&quot;,
-                  logo: &quot;/logo.png&quot;
-               });
-            &lt;/script&gt;
-            &lt;/body&gt;
-         &lt;/html&gt;
-         </code>
+&lt;body&gt;
+  ...
+  
+  &lt;script src=&quot;path/to/cookieData.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;path/to/cookieWidget.min.js&quot;&gt;&lt;/script&gt;
+  
+  &lt;script&gt;
+    CookieWidget.init({
+      primaryColor: &#039;#4f2170&#039;,              <span>// Цвет кнопок и акцентов</span>
+      logoBackground: &#039;#EEEEEE&#039;,            <span>// Цвет фона для лого (если лого не видно на светлом фоне)</span>
+      logoUrl: &#039;/path/to/logo.png&#039;,         <span>// Путь к логотипу</span>
+      policyUrl: &#039;/path/to/cookies-policy&#039;, <span>// Ссылка на страницу политики cookies</span>
+      cookieData: window.cookieWidgetData   <span>// Данные о cookies (из cookieData.js)</span>
+    });
+  &lt;/script&gt;
+&lt;/body&gt;</code>
       </pre>
+      <p class="full"></p>
+      <br />
+      <h2>Структура данных cookieData</h2>
+      <hr />
       <p>
-        Lorem ipsum dolor sit <a href="">consectetur adipisicing</a> amet elit. Nostrum, ipsa sapiente. Pariatur obcaecati veritatis error optio
-        accusamus provident expedita corporis labore quidem mollitia, sint aut eum omnis. Debitis, consequatur incidunt. Iusto, odio rerum. Iusto
-        beatae vero, quas delectus quia inventore dolorem. At consequuntur molestiae quod nemo mollitia delectus ratione? Porro optio nam rem eveniet
-        veniam explicabo, quis ipsum eos nemo. Sunt autem accusamus libero dolorem sint cum unde eius dolores fugit minus distinctio ipsum facere
-        alias error in, aperiam consectetur eum aliquam hic earum? Beatae molestiae id vero earum sint? Debitis quos voluptatem odit amet, doloremque
-        nemo architecto ab recusandae tenetur? Cumque pariatur ea quas nihil quia dolores sequi quae earum vitae? Minus iusto quasi reprehenderit
-        sequi vel autem facilis! Hic voluptas possimus dignissimos totam nam perspiciatis ab assumenda rerum exercitationem cupiditate ea laboriosam
-        officia dicta quisquam perferendis labore dolorem soluta, mollitia, blanditiis, voluptates accusantium. Provident illum praesentium eius
-        labore!
+        <b>cookieData</b> — это массив объектов, описывающих группы файлов cookie. <br />
+        Данные можно <b>заполнять самостоятельно</b>, адаптируя под сайт, продукты или рекламные платформы.
       </p>
+      <p>Визуально пример одного объекта:</p>
+      <pre>
+         <code>
+{
+  &quot;slug&quot;: &quot;strictly-necessary-cookies&quot;,
+  &quot;category&quot;: &quot;Строго необходимые файлы cookie&quot;,
+  &quot;description&quot;: &quot;Эти файлы cookie необходимы для функционирования веб-сайта...&quot;,
+  &quot;selectable&quot;: false,
+  &quot;cookies&quot;: [
+    {
+      &quot;host&quot;: &quot;example.com&quot;,
+      &quot;list&quot;: [
+        {
+          &quot;name&quot;: &quot;session_id&quot;,
+          &quot;description&quot;: &quot;Сохраняет идентификатор сессии пользователя.&quot;
+        }
+      ]
+    }
+  ]
+}</code>
+      </pre>
+
+      <b>Структура одного объекта:</b>
+      <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Поле</th>
+            <th>Тип</th>
+            <th>Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>slug</td>
+            <td>string</td>
+            <td>Уникальный идентификатор группы cookie (для фильтрации и хранения состояния)</td>
+          </tr>
+          <tr>
+            <td>category</td>
+            <td>string</td>
+            <td>Название категории cookie (отображается пользователю)</td>
+          </tr>
+          <tr>
+            <td>description</td>
+            <td>string</td>
+            <td>Описание категории cookie</td>
+          </tr>
+          <tr>
+            <td>selectable</td>
+            <td>boolean</td>
+            <td>Можно ли отключать эту группу (false для обязательных файлов)</td>
+          </tr>
+          <tr>
+            <td>cookies</td>
+            <td>array</td>
+            <td>Массив групп хостов и файлов cookie</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <b>Структура объекта внутри cookies:</b>
+      <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Поле</th>
+            <th>Тип</th>
+            <th>Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>host</td>
+            <td>string</td>
+            <td>Название домена или источника cookies</td>
+          </tr>
+          <tr>
+            <td>list</td>
+            <td>array</td>
+            <td>Список отдельных cookies для данного домена</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <b>Структура объекта внутри list:</b>
+      <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Поле</th>
+            <th>Тип</th>
+            <th>Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>Название cookie-файла</td>
+          </tr>
+          <tr>
+            <td>description</td>
+            <td>string</td>
+            <td>Описание назначения cookie-файла</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="full"></p>
+      <br />
+      <h2>LocalStorage</h2>
+      <hr />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, ipsa sapiente. Pariatur obcaecati veritatis error optio accusamus provident
-        expedita corporis labore quidem mollitia, sint aut eum omnis. Debitis, consequatur incidunt. Iusto, odio rerum. Iusto beatae vero, quas
-        delectus quia inventore dolorem. At consequuntur molestiae quod nemo mollitia delectus ratione? Porro optio nam rem eveniet veniam explicabo,
-        quis ipsum eos nemo. Sunt autem accusamus libero dolorem sint cum unde eius dolores fugit minus distinctio ipsum facere alias error in,
-        aperiam consectetur eum aliquam hic earum? Beatae molestiae id vero earum sint? Debitis quos voluptatem odit amet, doloremque nemo architecto
-        ab recusandae tenetur? Cumque pariatur ea quas nihil quia dolores sequi quae earum vitae? Minus iusto quasi reprehenderit sequi vel autem
-        facilis! Hic voluptas possimus dignissimos totam nam perspiciatis ab assumenda rerum exercitationem cupiditate ea laboriosam officia dicta
-        quisquam perferendis labore dolorem soluta, mollitia, blanditiis, voluptates accusantium. Provident illum praesentium eius labore!
+        Cookie Widget автоматически сохраняет выбор пользователя в localStorage под ключом <b>cookieConsent</b><br />
+        Пример сохранённых данных в LocalStorage:
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, ipsa sapiente. Pariatur obcaecati veritatis error optio accusamus provident
-        expedita corporis labore quidem mollitia, sint aut eum omnis. Debitis, consequatur incidunt. Iusto, odio rerum. Iusto beatae vero, quas
-        delectus quia inventore dolorem. At consequuntur molestiae quod nemo mollitia delectus ratione? Porro optio nam rem eveniet veniam explicabo,
-        quis ipsum eos nemo. Sunt autem accusamus libero dolorem sint cum unde eius dolores fugit minus distinctio ipsum facere alias error in,
-        aperiam consectetur eum aliquam hic earum? Beatae molestiae id vero earum sint? Debitis quos voluptatem odit amet, doloremque nemo architecto
-        ab recusandae tenetur? Cumque pariatur ea quas nihil quia dolores sequi quae earum vitae? Minus iusto quasi reprehenderit sequi vel autem
-        facilis! Hic voluptas possimus dignissimos totam nam perspiciatis ab assumenda rerum exercitationem cupiditate ea laboriosam officia dicta
-        quisquam perferendis labore dolorem soluta, mollitia, blanditiis, voluptates accusantium. Provident illum praesentium eius labore!
-      </p>
+      <pre>
+         <code>
+{
+  &quot;strictly-necessary-cookies&quot;: true,
+  &quot;targeting-cookies&quot;: false
+}</code>
+      </pre>
+      <b>Как это работает:</b>
+      <ul class="cookie-widget-list">
+        <li>При первом отображении виджет создаёт объект состояния с дефолтными значениями (все <code>false</code>, кроме обязательных cookies).</li>
+        <li>Когда пользователь нажимает "Принять", "Отклонить" или вручную выбирает настройки — объект <code>cookieConsent</code> обновляется.</li>
+        <li>При следующих визитах виджет проверяет наличие данных в localStorage.</li>
+        <li>Если данные есть — окно не показывается снова.</li>
+        <li>Если данных нет — пользователю снова показывается окно настроек cookies.</li>
+      </ul>
     </section>
 
     <script src="./assets/js/cookieData.js"></script>
-    <script src="./assets/js/cookieWidget.js"></script>
+    <script src="./assets/js/cookieWidget.min.js"></script>
     <script>
       CookieWidget.init({
         primaryColor: '#4f2170',
