@@ -12,6 +12,7 @@
   font-weight: 400;
   line-height: 1.3;
   letter-spacing: 0.2px;
+  color: var(--cookie-widget-color);
 }
 .cookie-widget-popup-backdrop a {
   font-size: inherit;
