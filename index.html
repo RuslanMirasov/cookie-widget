@@ -4,14 +4,15 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <meta name="theme-color" content="#1A2663" />
-    <meta name="description" content="Омский бекон" />
+    <meta name="description" content="Cookie widget" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/default.min.css" />
-    <link rel="stylesheet" href="./assets/css/styles.min.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/styles.min.css" /> -->
+    <link rel="stylesheet" href="./assets/css/cookieWidget.css" />
 
     <title>Cookie widget</title>
   </head>
@@ -25,16 +26,14 @@
     <section>
       <h2>Шаг 1: Скачай файлы</h2>
       <hr />
-      <p class="full">Файлы доступны как в минифицированной версии, так и в базовой. На выбор:<br /></p>
+      <!-- <p class="full">Файлы доступны как в минифицированной версии, так и в базовой. На выбор:<br /></p> -->
       <p>
         Стили: <br />
         <a href="./assets/css/cookieWidget.css" download>cookieWidget.css</a> <br />
-        <a href="./assets/css/cookieWidget.min.css" download>cookieWidget.min.css</a> <br />
       </p>
       <p>
         Виджет: <br />
         <a href="./assets/js/cookieWidget.js">cookieWidget.js</a> <br />
-        <a href="./assets/css/cookieWidget.min.css" download>cookieWidget.min.js</a> <br />
       </p>
       <p>
         Данные coockie (Milka): <br />
@@ -50,7 +49,7 @@
          <code>
 &lt;head&gt;
   ...
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/cookieWidget.min.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/cookieWidget.css&quot;&gt;
 &lt;/head&gt;</code>
       </pre>
       <p>
@@ -63,7 +62,7 @@
   ...
   
   &lt;script src=&quot;path/to/cookieData.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;path/to/cookieWidget.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;path/to/cookieWidget.js&quot;&gt;&lt;/script&gt;
   
   &lt;script&gt;
     CookieWidget.init({
@@ -71,7 +70,7 @@
       logoBackground: &#039;#EEEEEE&#039;,            <span>// Цвет фона для лого (если лого не видно на светлом фоне)</span>
       logoUrl: &#039;/path/to/logo.png&#039;,         <span>// Путь к логотипу</span>
       policyUrl: &#039;/path/to/cookies-policy&#039;, <span>// Ссылка на страницу политики cookies</span>
-      cookieData: window.cookieWidgetData   <span>// Данные о cookies (из cookieData.js)</span>
+      cookieData: window.cookieData,        <span>// Данные о cookies (из cookieData.js)</span>
     });
   &lt;/script&gt;
 &lt;/body&gt;</code>
@@ -215,7 +214,7 @@
     </section>
 
     <script src="./assets/js/cookieData.js"></script>
-    <script src="./assets/js/cookieWidget.min.js"></script>
+    <script src="./assets/js/cookieWidget.js"></script>
     <script>
       CookieWidget.init({
         primaryColor: '#4f2170',
