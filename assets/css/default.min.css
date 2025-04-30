@@ -65,6 +65,7 @@ pre {
   border-radius: 20px;
   font-size: 14px;
   font-weight: 300;
+  overflow: hidden;
 }
 pre::-webkit-scrollbar {
   display: none;
@@ -160,4 +161,19 @@ ul {
 
 ul li {
   margin-bottom: 8px;
+}
+
+section > img {
+  max-width: 300px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  table th,
+  table td {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  section > img {
+    max-width: 200px;
+  }
 }
